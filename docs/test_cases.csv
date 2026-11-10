@@ -1,0 +1,7 @@
+Test Case ID,Module,Scenario,Preconditions,Test Steps,Expected Result,Priority,Automation
+TC-LOGIN-001,Login,Login with valid credentials,User is on login page,"Enter standard_user and secret_sauce; click Login",User is redirected to Products page,High,Automated
+TC-LOGIN-002,Login,Login with invalid password,User is on login page,"Enter standard_user and incorrect password; click Login",An authentication error is displayed,High,Automated
+TC-CART-001,Cart,Add product to cart,User is logged in,"Click Add to cart for Sauce Labs Backpack; open cart",Cart badge shows 1 and product appears in cart,High,Automated
+TC-CART-002,Cart,Remove product from cart,User is logged in and product is in cart,"Open cart; click Remove",Cart becomes empty,Medium,Automated
+TC-CHK-001,Checkout,Validate required first name,User is logged in and has a product in cart,"Proceed to checkout; leave first name blank; complete other fields; click Continue",Validation error indicates first name is required,High,Automated
+TC-CHK-002,Checkout,Complete checkout,User is logged in and has a product in cart,"Enter customer details; Continue; Finish",Order confirmation is displayed,High,Automated

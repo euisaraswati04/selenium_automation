@@ -29,3 +29,13 @@ def test_login_with_invalid_password_shows_error(driver):
         EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='error']"))
     )
     assert "Username and password do not match" in error.text
+
+def test_login_with_empty_username(driver):
+    driver.find_element(By.ID, "user-name").send_keys("")
+    driver.find_element(By.ID, "password").send_keys("secret_sauce")
+    driver.find_element(By.ID, "login-button").click()
+
+    error = WebDriverWait(driver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-test='error']"))
+    )
+    assert "Username is required" in error.text
